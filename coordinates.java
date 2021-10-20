@@ -1,39 +1,48 @@
-//import math
+import javax.print.attribute.standard.MediaSize;
+import java.awt.geom.Point2D;
+import java.lang.Math;
+import java.util.Scanner;
 
 public class coordinates {
 
-    public static float x;
-    public static float y;
-    public static float DistanceToOrigin;
-    public static float OtherX;
-    public static float OtherY;
-    public static Point2D.Float OtherPolar; 
-
     public static void main(String[] args) {
-        x = 1;
-        y = 1;
-        OtherX = 5
-        OtherY = 3;
-        DistanceToOrigin = DistanceToOrigin(x, y);
-        System.out.println(DistanceToOrigin);
-        OtherPolar = CartesianToPolar(OtherX, OtherY);
-        System.out.println("r: " + OtherPolar.x);
-        System.out.println("theta: " + OtherPolar.y);
-
-        
+        //problem 1
+        double x = 1;
+        double y = 1;
+        //problem 2
+        double DistanceToOrigin = DistanceToOrigin(x, y);
+        System.out.println("Distance to origin: " + DistanceToOrigin);
+        //problem 3
+        double OtherX = 5;
+        double OtherY = 3;
+        //problem 4
+        double r = DistanceToOrigin(OtherX, OtherY);
+        double theta = Math.atan(OtherY / OtherX);
+        System.out.println("r: " + r);
+        System.out.println("theta: " + theta);
+        //extra credit 1
+        PolarToCartesian();
     }
 
-    public static float DistanceToOrigin(float x, float y) {
-       Math.pow(x^2) - Math.pow(y^2);
+    //problem 2 and 4
+    public static double DistanceToOrigin(double x, double y) {
+        return Math.sqrt(Math.pow(x, 2) + Math.pow(y, 2));
     }
 
-    public static Point2D.Float CartesianToPolar(float x, float y) {
-        float r = sqrt(Math.pow(x^2) + Math.pow(y^2));
-        float theta = atan(y / x);
-        Point2D.Float point = new Point2D(r, theta);
-        return point;
+    //extra credit 1
+    public static void PolarToCartesian() {
+        Scanner userCoodinates = new Scanner(System.in);
+        System.out.println("Enter an r value");
+        double r = Double.parseDouble(userCoodinates.nextLine());
+        System.out.println("Enter a value for theta");
+        double theta = Double.parseDouble(userCoodinates.nextLine());
+        userCoodinates.close();
+        double x = r * Math.cos(theta);
+        double y = r * Math.sin(theta);
+        printPoint(new Point2D.Double(x, y));
     }
 
-    public static Point2.Float PolatToCartesian(float r float theta) {
+    public static void printPoint(Point2D point) {
+        System.out.println("(" + point.getX() + ", " + point.getY() + ")");
     }
 }
