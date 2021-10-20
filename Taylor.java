@@ -1,7 +1,7 @@
 public class Taylor {
 
     public static void main(String[] args) {
-
+        System.out.println("eApprox: " + TaylorE(1, 10));
     }
 
     public static double TaylorE(double x, int n) {
