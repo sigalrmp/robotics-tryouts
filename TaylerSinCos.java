@@ -1,6 +1,8 @@
 public class TaylerSinCos {
 
     public static void main(String[] args) {
+        System.out.println("Sin approximation: " + TSin(0, 10));
+        System.out.println("Cos approximation: " + TCos(0, 10));
     }
 
     public static double TSin(double x, int n) {
