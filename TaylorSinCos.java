@@ -1,4 +1,4 @@
-public class TaylerSinCos {
+public class TaylorSinCos {
 
     public static void main(String[] args) {
         System.out.println("Sin approximation: " + TSin(0, 10));

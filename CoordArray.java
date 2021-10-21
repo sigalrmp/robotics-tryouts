@@ -7,22 +7,14 @@ public class CoordArray {
 
     public static void main(String[] args) {
 
-        System.out.println("distance between points 4 and 7 :" + DistBtwnPoints(points[3], points[6]));
-        System.out.println("distance along the path from start to end" + DistAlongPoints(0, points.length - 1));
-        DistInputAB();
+        System.out.println("distance between points 4 and 7: " + DistBtwnPoints(points[3], points[6]));
+        System.out.println("distance along the path from start to end: " + DistAlongPoints(0, points.length - 1));
+        System.out.println(DistInputAB());
     }
 
     public static double DistBtwnPoints(double point1[], double point2[]) {
         return Math.sqrt(Math.pow(point1[0] - point2[0], 2) + Math.pow(point1[1] - point2[1], 2));
     }
-
-   // public static double TotalDistAlong(double[][] points) {
-     //   double dist = 0;
-       // for (int point = 0; point < 9; point ++) {
-         //   dist += DistBtwnPoints(points[point], points[point + 1]);
-      //  }
-    // return dist;
-    //}
 
     public static double DistAlongPoints(int start, int end) {
         double dist = 0;
