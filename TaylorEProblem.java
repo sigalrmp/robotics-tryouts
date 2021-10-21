@@ -1,4 +1,4 @@
-public class Taylor {
+public class TaylorEProblem {
 
     public static void main(String[] args) {
         System.out.println("eApprox: " + TaylorE(1, 10));
@@ -15,6 +15,6 @@ public class Taylor {
         if (n <= 1) {
             return 1;
         }
-        else return n * factorial(n - 1);
+        else return n * factorial(n - 1);   
     }
 }

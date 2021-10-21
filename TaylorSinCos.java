@@ -1,7 +1,7 @@
 public class TaylorSinCos {
 
     public static void main(String[] args) {
-        System.out.println("Sin approximation: " + TSin(0, 10));
+        System.out.println("Sin approximation: " + TSin(1.57, 10));
         System.out.println("Cos approximation: " + TCos(0, 10));
     }
 
@@ -10,11 +10,11 @@ public class TaylorSinCos {
     }
 
     public static double TSinH(double x, int n, int i, int sign) {
-        double val = sign * Math.pow(x, i) / Taylor.factorial(i);
+        double val = sign * Math.pow(x, i) / TaylorEProblem.factorial(i);
         if (i >= n) {
             return val;
         }
-        else { return val + TSinH(- x, n, i + 2, -sign); }
+        else { return val + TSinH(x, n, i + 2, -sign); }
     }
 
     public static double TCos(double x, int n) {
@@ -22,7 +22,7 @@ public class TaylorSinCos {
     }
 
     public static double TCosH(double x, int n, int i, int sign) {
-        double val = sign * Math.pow(x, i) / Taylor.factorial(i);
+        double val = sign * Math.pow(x, i) / TaylorEProblem.factorial(i);
         if (i >= n) {
             return val;
         }
